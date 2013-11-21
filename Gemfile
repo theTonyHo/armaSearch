@@ -1,5 +1,15 @@
 source 'https://rubygems.org'
 
+# Open ID authentication
+gem 'ruby-openid'
+
+# Omniauth
+gem 'omniauth-github'
+gem 'omniauth-openid'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
