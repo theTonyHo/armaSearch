@@ -1,20 +1,32 @@
 source 'https://rubygems.org'
+group :authentication do
+  # Open ID authentication
+  gem 'ruby-openid'
 
-# Open ID authentication
-gem 'ruby-openid'
-
-# Omniauth
-gem 'omniauth-github'
-gem 'omniauth-openid'
-gem 'omniauth-twitter'
-gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
+  # Omniauth
+  gem 'omniauth-github'
+  gem 'omniauth-openid'
+  gem 'omniauth-twitter'
+  gem 'omniauth-facebook'
+  gem 'omniauth-google-oauth2'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
+group :doc do
+  gem 'sdoc', require: false
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
