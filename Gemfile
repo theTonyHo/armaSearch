@@ -10,6 +10,8 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
+gem 'simple_form'
+gem 'debugger'
 gem 'haml'
 gem 'devise'
 
