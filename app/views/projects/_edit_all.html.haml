@@ -1,0 +1,28 @@
+%table.table-responsive
+%table.table.table-striped.table-hover
+  -Project.all().each do |project|
+      
+    %tr
+      = simple_form_for project do |f|
+        %td
+          = project[:id]
+        %td
+          = f.input :number
+        %td
+          = f.input :name
+        %td
+          = f.input :owner
+        %td
+          = f.input :description
+        %td
+          = f.input :client
+        %td
+          = f.input :architect
+        %td
+          = f.input :designer
+        %td
+          = f.input :status
+        %td
+          = f.input :date_completed
+        %td
+          = f.submit

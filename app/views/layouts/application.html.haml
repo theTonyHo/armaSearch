@@ -9,7 +9,8 @@
     .container-narrow
       .masthead
         =render 'layouts/user_header'
-        %h2.muted= link_to "armaSearch", root_path, :title => "armaSearch"
-        %h5.muted Project Manager for architects
+        %h2.muted= link_to ArmaSearch::Application::NAME, root_path, :title => ArmaSearch::Application::NAME
+        %h5.muted= ArmaSearch::Application::SLOGAN
+        
       %hr/
     = yield

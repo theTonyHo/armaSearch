@@ -73,6 +73,13 @@ OpenID and OAuth 2.0, i.e. Google Account will generate a user in the database u
 * A Drawing has one parent drawing
 * All Drawings are linked by relationships using the drawing Number.
 
+##Set up GEMFILE
+
+    simple_form
+    devise
+    bootstrap
+
+
 ##RESOURCES
 
 Devise - Cancan - Role Model: 

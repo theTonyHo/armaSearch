@@ -1,0 +1,31 @@
+-if data.count == 0
+  .status There are no record to display
+-else
+  %h1= data.table_name.capitalize
+ 
+  %br/
+  = "Keys found:"
+  = data[0].attributes.keys()
+  %table.table-responsive
+  %table.table.table-striped.table-hover
+    %tr
+      - keys.each do |k|
+        - if k == :index
+          %td #
+        - else
+          %td= k
+
+    -data.each_with_index do |record, i|
+      %tr
+        - keys.each do |k|
+          - if k == :index
+            %td= i+1
+          - else
+            - if record.attributes.has_key?(k.to_s) == false
+              %td Not Found
+            - else
+              - if record[k].blank?
+                %td= "--" 
+              - else
+                %td= record[k]
+

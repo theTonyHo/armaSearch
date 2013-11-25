@@ -14,18 +14,35 @@
 ActiveRecord::Schema.define(version: 20131125011114) do
 
   create_table "drawings", force: true do |t|
+    t.integer  "number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "project"
+    t.string   "title"
+    t.string   "series"
+    t.string   "revision"
   end
 
   create_table "parts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "number"
+    t.integer  "drawing"
+    t.integer  "assembly"
   end
 
   create_table "projects", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "owner"
+    t.integer  "number"
+    t.string   "description"
+    t.string   "client"
+    t.string   "architect"
+    t.string   "designer"
+    t.string   "date_completed"
+    t.string   "status"
   end
 
   create_table "users", force: true do |t|
