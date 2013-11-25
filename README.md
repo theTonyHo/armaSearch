@@ -13,6 +13,7 @@ armaSearch
 
 OpenID and OAuth 2.0, i.e. Google Account will generate a user in the database using the details from Google Account automatically.
 
+##Devise
 
 ##Models
 
@@ -20,10 +21,13 @@ OpenID and OAuth 2.0, i.e. Google Account will generate a user in the database u
 * Drawings
 * Parts
 * Links
+* Users
 
 ####Project
 
+* id: 
 * number: number in format YY## (4th project in 2013 is 1304)
+* owner: user_id
 * title: string
 * description: string
 * date_created: date-time
@@ -35,18 +39,24 @@ OpenID and OAuth 2.0, i.e. Google Account will generate a user in the database u
 
 ####Drawing
 
+* id:
 * number: string
 * project_id: project.number
 * title
-* set_id
-* scale
+* set_number
 * revision
 * drawn_by
 
 ####Part
 
+* id
+* number: string
+* drawing_id: foreign key
+* parts_list: list of part_id
 
 ##User Stories
+
+* User can create Projects
 
 * A Project is a Building or part of a building depending on scope of work.
 * A Project has many Drawings

@@ -6,4 +6,11 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
+    .login_box
+      - if user_signed_in?
+        You are logged in as: 
+        = current_user.email
+        = link_to 'Logout', destroy_user_session_path, :method => 'delete'
+      - else
+        = link_to 'Log in', new_user_session_path 
     = yield

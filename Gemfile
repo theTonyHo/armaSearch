@@ -14,6 +14,8 @@ gem 'simple_form'
 gem 'debugger'
 gem 'haml'
 gem 'devise'
+gem 'cancan'
+gem 'role_model'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
