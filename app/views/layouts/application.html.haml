@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title ArmaSearch
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    .container-narrow
+      .masthead
+        =render 'layouts/user_header'
+        %h2.muted= link_to "armaSearch", root_path, :title => "armaSearch"
+        %h5.muted Project Manager for architects
+      %hr/
+    = yield
