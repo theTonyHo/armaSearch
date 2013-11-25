@@ -43,7 +43,7 @@ OpenID and OAuth 2.0, i.e. Google Account will generate a user in the database u
 * number: string
 * project_id: project.number
 * title
-* set_number
+* series
 * revision
 * drawn_by
 
@@ -52,7 +52,7 @@ OpenID and OAuth 2.0, i.e. Google Account will generate a user in the database u
 * id
 * number: string
 * drawing_id: foreign key
-* parts_list: list of part_id
+* assembly: part_id
 
 ##User Stories
 
