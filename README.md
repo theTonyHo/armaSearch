@@ -85,6 +85,10 @@ OpenID and OAuth 2.0, i.e. Google Account will generate a user in the database u
 Devise - Cancan - Role Model: 
 [Phase2Technology.com](http://www.phase2technology.com/blog/authentication-permissions-and-roles-in-rails-with-devise-cancan-and-role-model/)
 
+Drag-n-Drop: [dannemanne.com](http://dannemanne.com/posts/drag-n-drop_upload_that_works_with_ror_and_paperclip)
+
+Rails paperclip drag and drop multiple files: [StackOverflow](http://stackoverflow.com/questions/15703594/rails-paperclip-drag-and-drop-multiple-files)
+
 ##Reference
 
 http://railscasts.com/episodes/304-omniauth-identity?view=asciicast
