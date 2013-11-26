@@ -10,11 +10,17 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
+#File upload
+gem 'paperclip'
+gem 'aws-sdk'
 
+# Utilities
 gem "bootstrap-sass-rails"
 gem 'simple_form'
 gem 'debugger'
 gem 'haml'
+
+# User logins and authentications
 gem 'devise'
 gem 'cancan'
 gem 'role_model'
