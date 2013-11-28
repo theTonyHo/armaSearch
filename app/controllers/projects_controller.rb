@@ -1,6 +1,5 @@
 class ProjectsController < ApplicationController
 
-  attr_reader :name
   before_filter :authenticate_user!
 
 
@@ -13,6 +12,20 @@ class ProjectsController < ApplicationController
     @projects = Project.all()
   end
 
+ def new
+    @project = Project.new
+  end
+
+  def create
+    @project = Project.new(permitted_params)
+    
+    if @project.save
+      redirect_to projects_path
+    else
+      render 'new'
+    end
+  end
+  
   def edit
     @project = Project.find(params[:id])
   end
@@ -30,10 +43,6 @@ class ProjectsController < ApplicationController
     else
       render 'edit'
     end
-  end
-
-  def to_param
-    "BLAH"
   end
 
   protected

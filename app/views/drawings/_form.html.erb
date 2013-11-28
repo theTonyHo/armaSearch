@@ -1,0 +1,17 @@
+<%= simple_form_for [@project, @drawing] do |f| %>
+  <%= f.input :number %>
+  <%= f.input :project %>
+  <%= f.input :title %>
+  <%= f.input :series %>
+  <%= f.input :revision %>
+  <%= f.input :attachment_file_name %>
+  <%= f.input :attachment_content_type %>
+  <%= f.input :attachment_file_size %>
+  <%= f.input :attachment_updated_at %>
+  <%= f.input :project_id %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                project_drawings_path, :class => 'btn' %>
+  </div>
+<% end %>
