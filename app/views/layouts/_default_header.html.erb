@@ -1,0 +1,36 @@
+    <div class="navbar navbar-fluid-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href=<%= root_path %> ><%= Settings.app.title %></a>
+          <div class="container-fluid nav-collapse">
+              <ul class="nav nav-pills">
+                <% if user_signed_in?%>
+                  <li><%= link_to "PROJECTS", projects_path  %></li>
+                  <% if params[:project_id]%>
+                    <li><%= link_to "DRAWINGS", project_parts_path(params[:project_id]) %></li>
+                    <li><%= link_to "PARTS", project_parts_path(params[:project_id]) %></li>
+                  <% end %>
+
+                <% end %>
+              </ul>
+
+
+              <ul class="nav nav-pills pull-right">
+                <% if user_signed_in?%>
+
+                  <li><%= link_to current_user.email, edit_user_registration_path %></li>
+                  <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %></li>
+                <% else %>
+                  <li><%= link_to "Sign in", new_user_session_path %></li>
+                  <li><%= link_to "Sign up", new_user_registration_path %></li>
+                <% end %>
+              </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>

@@ -1,9 +1,10 @@
 %ul.nav.nav-pills.pull-right
   - if user_signed_in?
     %li= link_to "Projects", projects_path, :title => "Project"
-    %li= link_to "Drawings", drawings_path, :title => "Project"
-    %li= link_to "Parts", parts_path, :title => "Project"
-    %li= link_to current_user.email, "#"
+    - if params[:project_id]
+      %li= link_to "Drawings", project_drawings_path(params[:project_id]), :title => "Project"
+      %li= link_to "Parts", project_parts_path(params[:project_id]), :title => "Project"
+    %li= link_to current_user.email, edit_user_registration_path
     %li= link_to "Sign out", destroy_user_session_path, :method => :delete
   - else
     %li= link_to "Sign in", new_user_session_path

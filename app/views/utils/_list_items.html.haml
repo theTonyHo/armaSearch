@@ -1,11 +1,18 @@
+/List all the record in an ActiveRecord Relation retrieved from the SQL query
+-debug = false
+
 -if data.count == 0
   .status There are no record to display
 -else
-  %h1= data.table_name.capitalize
+  %h5    
+    = "Listing all relevant #{data[0].class.to_s}s"
  
   %br/
-  - "Keys found:"
-  - data[0].attributes.keys()
+  - if debug
+    = "Keys found:"
+    = data[0].attributes.keys()
+    %p= data[0].class.to_param.class
+    %p= params
   %table.table-responsive
   %table.table.table-striped.table-hover
     %tr
@@ -16,6 +23,7 @@
           %td= k
 
     -data.each_with_index do |record, i|
+
       %tr
         - keys.each do |k|
           - if k == :index
@@ -27,5 +35,5 @@
               - if record[k].blank?
                 %td= "--" 
               - else
-                %td= record[k]
+                %td= link_to record[k], record
 

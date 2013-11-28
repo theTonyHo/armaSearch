@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131125011114) do
+ActiveRecord::Schema.define(version: 20131128125318) do
 
   create_table "drawings", force: true do |t|
     t.integer  "number"
@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(version: 20131125011114) do
     t.string   "title"
     t.string   "series"
     t.string   "revision"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.integer  "project_id"
   end
 
   create_table "parts", force: true do |t|
@@ -29,6 +34,14 @@ ActiveRecord::Schema.define(version: 20131125011114) do
     t.string   "number"
     t.integer  "drawing"
     t.integer  "assembly"
+    t.integer  "drawing_id"
+  end
+
+  create_table "project_users", force: true do |t|
+    t.integer  "projects_id"
+    t.integer  "users_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "projects", force: true do |t|
@@ -43,6 +56,7 @@ ActiveRecord::Schema.define(version: 20131125011114) do
     t.string   "designer"
     t.string   "date_completed"
     t.string   "status"
+    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|

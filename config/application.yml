@@ -1,0 +1,26 @@
+# config/application.yml
+defaults: &defaults
+  app:
+    title: armaSearch
+    slogan: Project Manager for Construction Industry
+    author: Tony Ho
+    company: 
+      name: AR-MA
+      fullname: Architectural Research - Materials Application
+      address: 
+        street: 42 Dangar Place
+        suburb: Chippendale 2008
+        state: NSW
+        country: Australia
+      contact:
+        sydney: +61 2 89576300
+
+development:
+  <<: *defaults
+  neat_setting: 800
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

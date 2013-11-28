@@ -1,0 +1,10 @@
+%nav.navbar.navbar-inverse{:role => "navigation"}
+  %ul.nav.nav-pills
+    %li= link_to "Add", new_project_path
+    %li= link_to "LINK", "#"
+    %li= link_to "LINK", "#"
+    %form.navbar-form.navbar-right{:role => "search"}
+      .form-group
+        %input.form-control{:placeholder => "Search", :type => "text"}/
+      %button.btn.btn-default{:type => "submit"} Filter
+

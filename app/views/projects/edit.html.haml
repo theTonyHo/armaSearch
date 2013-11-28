@@ -1,4 +1,4 @@
-= simple_form_for @project do |f|
+= simple_form_for @project, :url => project_path(params[:id]).to_s do |f|
   = f.input :number
   = f.input :name
   = f.input :owner

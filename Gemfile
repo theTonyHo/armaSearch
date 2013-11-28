@@ -11,11 +11,14 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
 #File upload
-gem 'paperclip'
+gem "paperclip", "~> 3.0"
 gem 'aws-sdk'
 
+#CSS
+
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
 # Utilities
-gem "bootstrap-sass-rails"
 gem 'simple_form'
 gem 'debugger'
 gem 'haml'
@@ -24,6 +27,9 @@ gem 'haml'
 gem 'devise'
 gem 'cancan'
 gem 'role_model'
+
+# Settings management
+gem 'settingslogic'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'

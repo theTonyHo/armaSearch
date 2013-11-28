@@ -1,1 +1,3 @@
-= render 'utils/list_items', :data => @projects, :keys => [:index, :id, :number, :name, :description, :client, :architect, :designer, :status]
+= render 'projects/actions'
+
+= render 'utils/list_items', :data => @projects, :keys => [:index, :id, :number, :name, :description, :client, :architect, :designer, :status, :user_id]
