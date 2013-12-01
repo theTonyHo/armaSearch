@@ -22,15 +22,18 @@ before_action :get_project
   end
 
   def edit
-    @part = Part.find(params[:id])
+    # @part = Part.find(params[:id])
+    @part = Part.friendly.find(params[:id])
   end
 
   def show
-    @part = Part.find(params[:id])
+    # @part = Part.find(params[:id])
+    @part = Part.friendly.find(params[:id])
   end
 
   def update
-    @part = Part.find(params[:id])
+    # @part = Part.find(params[:id])
+    @part = Part.friendly.find(params[:id])
     if @part.update(permitted_params)
       redirect_to project_part_path
     else
@@ -38,8 +41,16 @@ before_action :get_project
     end
   end
 
+  def destroy
+    # @part = Part.find(params[:id])
+    @part = Part.friendly.find(params[:id])
+    @part.destroy
+    redirect_to project_parts_path
+  end
+
   def get_project
-    @project = Project.find(params[:project_id])
+    # @project = Project.find(params[:project_id])
+    @project = Project.friendly.find(params[:project_id])
   end
 
   protected

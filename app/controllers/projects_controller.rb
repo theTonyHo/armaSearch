@@ -27,17 +27,21 @@ class ProjectsController < ApplicationController
   end
   
   def edit
-    @project = Project.find(params[:id])
+    # @project = Project.find(params[:id])
+    @project = Project.friendly.find(params[:id])
+
   end
 
   def show
-    @project = Project.find(params[:id])
+    # @project = Project.find(params[:id])
+    @project = Project.friendly.find(params[:id])
     params[:project_id] = params[:id]
   end
 
 
   def update
-    @project = Project.find(params[:id])
+    # @project = Project.find(params[:id])
+    @project = Project.friendly.find(params[:id])
     if @project.update(permitted_params)
       redirect_to project_path
     else
@@ -45,9 +49,16 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    # @project = Project.find(params[:id])
+    @project = Project.friendly.find(params[:id])
+    @project.destroy
+    redirect_to projects_path
+  end
+
   protected
   def permitted_params
-    params.require(:project).permit(:number, :description)
+    params.require(:project).permit(:name, :number, :description)
   end
 
 end

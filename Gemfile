@@ -19,6 +19,7 @@ gem 'aws-sdk'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Utilities
+gem 'friendly_id', '~> 5.0.0'
 gem 'simple_form'
 gem 'debugger'
 gem 'haml'

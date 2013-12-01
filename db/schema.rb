@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128125318) do
+ActiveRecord::Schema.define(version: 20131201063438) do
 
   create_table "drawings", force: true do |t|
     t.integer  "number"
@@ -26,16 +26,34 @@ ActiveRecord::Schema.define(version: 20131128125318) do
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
     t.integer  "project_id"
+    t.string   "slug"
   end
+
+  add_index "drawings", ["slug"], name: "index_drawings_on_slug", unique: true
+
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "parts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "number"
-    t.integer  "drawing"
     t.integer  "assembly"
     t.integer  "drawing_id"
+    t.string   "slug"
   end
+
+  add_index "parts", ["slug"], name: "index_parts_on_slug", unique: true
 
   create_table "project_users", force: true do |t|
     t.integer  "projects_id"
@@ -57,7 +75,10 @@ ActiveRecord::Schema.define(version: 20131128125318) do
     t.string   "date_completed"
     t.string   "status"
     t.integer  "user_id"
+    t.string   "slug"
   end
+
+  add_index "projects", ["slug"], name: "index_projects_on_slug", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -11,7 +11,7 @@
               <ul class="nav nav-pills">
                 <% if user_signed_in?%>
                   <li><%= link_to "PROJECTS", projects_path  %></li>
-                  <% if params[:project_id]%>
+                  <% if params[:project_id] or params[:id]%>
                     <li><%= link_to "DRAWINGS", project_drawings_path(params[:project_id]) %></li>
                     <li><%= link_to "PARTS", project_parts_path(params[:project_id]) %></li>
                   <% end %>
