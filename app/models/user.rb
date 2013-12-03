@@ -4,4 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :projects
+  def all_projects
+    Project.joins(:users).where(users: {id: id})
+  end
 end

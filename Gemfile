@@ -11,6 +11,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
 #File upload
+gem "jquery-fileupload-rails"
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk'
 

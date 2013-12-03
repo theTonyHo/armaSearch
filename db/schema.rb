@@ -14,18 +14,19 @@
 ActiveRecord::Schema.define(version: 20131201063438) do
 
   create_table "drawings", force: true do |t|
-    t.integer  "number"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "project"
+    t.string   "name"
     t.string   "title"
     t.string   "series"
     t.string   "revision"
+    t.boolean  "is_part"
     t.string   "attachment_file_name"
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
     t.integer  "project_id"
+    t.integer  "part_id"
     t.string   "slug"
   end
 
@@ -47,28 +48,29 @@ ActiveRecord::Schema.define(version: 20131201063438) do
   create_table "parts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "number"
-    t.integer  "assembly"
+    t.string   "name"
+    t.integer  "assembly_id"
     t.integer  "drawing_id"
+    t.integer  "project_id"
     t.string   "slug"
   end
 
   add_index "parts", ["slug"], name: "index_parts_on_slug", unique: true
 
   create_table "project_users", force: true do |t|
-    t.integer  "projects_id"
-    t.integer  "users_id"
+    t.integer  "project_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "projects", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "owner"
-    t.integer  "number"
-    t.string   "description"
+    t.string   "name"
+    t.integer  "owner_id"
+    t.string   "title"
+    t.text     "description"
     t.string   "client"
     t.string   "architect"
     t.string   "designer"

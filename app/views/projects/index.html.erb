@@ -7,8 +7,6 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:owner) %></th>
-      <th><%= model_class.human_attribute_name(:number) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:client) %></th>
       <th><%= model_class.human_attribute_name(:architect) %></th>
@@ -25,15 +23,13 @@
       <tr>
         <td><%= link_to project.id, project_path(project) %></td>
         <td><%= project.name %></td>
-        <td><%= project.owner %></td>
-        <td><%= project.number %></td>
         <td><%= project.description %></td>
         <td><%= project.client %></td>
         <td><%= project.architect %></td>
         <td><%= project.designer %></td>
         <td><%= project.date_completed %></td>
         <td><%= project.status %></td>
-        <td><%= project.user_id %></td>
+        <td><%= User.find(project.user_id).email %></td>
         <td><%=l project.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

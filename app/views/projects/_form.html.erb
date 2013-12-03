@@ -1,14 +1,12 @@
 <%= simple_form_for @project, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name %>
-  <%= f.input :owner %>
-  <%= f.input :number %>
   <%= f.input :description %>
   <%= f.input :client %>
   <%= f.input :architect %>
   <%= f.input :designer %>
   <%= f.input :date_completed %>
   <%= f.input :status %>
-  <%= f.input :user_id %>
+
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

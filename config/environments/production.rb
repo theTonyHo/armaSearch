@@ -77,7 +77,10 @@ ArmaSearch::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-
+  
+  #Devise on heroku
+  config.assets.initialize_on_precompile = false
+  
   # Paperclip and S3
   config.paperclip_defaults = {
     :storage => :s3,
