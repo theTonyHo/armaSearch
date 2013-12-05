@@ -20,14 +20,14 @@ OpenID and OAuth 2.0, i.e. Google Account will generate a user in the database u
 * Projects
 * Drawings
 * Parts
-* Links
+* Links (ProjectUser)
 * Users
 
 ####Project
 
 * id: 
-* number: number in format YY## (4th project in 2013 is 1304)
-* owner: user_id
+* name: name of the project
+* user_id: user_id
 * title: string
 * description: string
 * date_created: date-time
@@ -40,36 +40,43 @@ OpenID and OAuth 2.0, i.e. Google Account will generate a user in the database u
 ####Drawing
 
 * id:
-* number: string
-* project_id: project.number
-* title
-* series
-* revision
+* name: string
+* project_id: project.id
+* title: string
+* series: string
+* revision: string
 * has_part: boolean
-* drawn_by
+* drawn_by: string
 
 ####Part
 
 * id
-* number: string
-* drawing_id: foreign key
-* assembly: part_id
+* name: string
+* drawing_id: drawing.id
+* assembly: part.id
 
 ##User Stories
 
 * User can create Projects
+* User can access other Projects which are shared with them
+
+--
 
 * A Project is a Building or part of a building depending on scope of work.
 * A Project has one user_id which is the owner
-* A Project can be shared with 
+* A Project can be shared with other users
 * A Project has many Drawings
 * A Project has many Parts
+
+--
 
 * A Drawing is a document to describe the project
 * A Drawing always have an attachment. PDF.
 * A Drawing links to many other drawings
 * A Drawing has one parent drawing
 * All Drawings are linked by relationships using the drawing Number.
+
+--
 
 * A Part is an identifiable object to be fabricated/produced.
 * A Part may contain many Parts, i.e. an Assembly
