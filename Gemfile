@@ -22,7 +22,6 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 # Utilities
 gem 'friendly_id', '~> 5.0.0'
 gem 'simple_form'
-gem 'debugger'
 gem 'haml'
 
 # User logins and authentications
@@ -60,6 +59,7 @@ gem 'jbuilder', '~> 1.2'
 group :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'debugger'
 end
 
 group :production do
