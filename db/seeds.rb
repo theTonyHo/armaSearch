@@ -62,7 +62,8 @@ end
       (1..10).each do |i|
 
         drawing_name = "#{p.name}_DRW_#{i.to_s.rjust(3,"0")}"
-        attachment = File.open("/Users/Thang/Dropbox/GA_BEWD/armaSearch/db/sample_database/TEMPLATE/drawings/SAMPLE_DRAWING.pdf")
+        filelocation = Rails.root + "db/sample_database/TEMPLATE/drawings/SAMPLE_DRAWING.pdf"
+        attachment = File.open(filelocation)
         new_drawing = p.drawings.create({:name => drawing_name, :attachment => attachment})
         new_drawing.is_part = false
         if new_drawing.valid?
@@ -78,7 +79,8 @@ end
       (1..10).each do |i|
 
         drawing_name = "#{p.name}_PRT_#{i.to_s.rjust(3,"0")}"
-        attachment = File.open("/Users/Thang/Dropbox/GA_BEWD/armaSearch/db/sample_database/TEMPLATE/parts/SAMPLE_PART.pdf")
+        filelocation = Rails.root + "db/sample_database/TEMPLATE/parts/SAMPLE_PART.pdf"
+        attachment = File.open(filelocation)
         new_drawing = p.drawings.create({:name => drawing_name, :attachment => attachment})
         new_drawing.is_part = true
 

@@ -28,7 +28,7 @@
         <td><%= drawing.revision %></td>
         <td><%= link_to drawing.attachment_file_name, drawing.attachment.url %></td>
         <td><%= drawing.attachment_content_type %></td>
-        <td><%= drawing.attachment_file_size %></td>
+        <td><%= number_to_human_size(drawing.attachment_file_size) %></td>
         <td><%= drawing.attachment_updated_at %></td>
         <td><%=l drawing.created_at %></td>
         <td>

@@ -48,19 +48,9 @@
           <div class="well sidebar-nav span3 pull-left pull-left">
             <ul class="nav nav-list">
               <li class="nav-header">Projects </li>
-              <% current_user.all_projects.each do |project| %>
-                <% if current_user.id == project.user_id %>
+                <% current_user.projects.each do |project| %>
                   <li><%= link_to project.name, project_path(project) %></li>
-                <% end %>
-              <%end%>
-            </ul>
-            <ul class="nav nav-list">
-              <li class="nav-header">Shared Projects </li>
-              <% current_user.all_projects.each do |project| %>
-                <% if not current_user.id == project.user_id %>
-                  <li><%= link_to project.name, "#can_only_view"%></li>
-                <% end %>
-              <%end%>
+                <%end%>
             </ul>
           </div><!--/.well -->
 
