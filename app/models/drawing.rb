@@ -5,7 +5,7 @@ class Drawing < ActiveRecord::Base
       project = Project.find(attachment.instance.project_id)
       user = User.find(project.user_id)
       user.email
-      "#{user.id}/#{project.id}"
+      "#{user.email}/#{project.id}"
     end
 
   belongs_to :project

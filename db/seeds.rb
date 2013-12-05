@@ -38,8 +38,12 @@ end
   new_projects = []
   new_projects << {:name => "1105_AAA_Flowers", :user_id => 1 }
   new_projects << {:name => "1103_BBB_Building", :user_id => 2 }
-  new_projects << {:name => "1205_LH_STAIR", :user_id => 3 }
+  new_projects << {:name => "1205_LNA_STAIR", :user_id => 3 }
   new_projects << {:name => "1116_UTS_Great_Hall", :user_id => 4 }
+  new_projects << {:name => "1102_MTA_Broadway", :user_id => 1 }
+  new_projects << {:name => "1103_GPT_Tower", :user_id => 2 }
+  new_projects << {:name => "1206_MPK_facade", :user_id => 3 }
+  new_projects << {:name => "1117_GCI_Castlereagh", :user_id => 4 }
   
   new_projects.each do |new_project_hash|
     p = Project.new(new_project_hash)
@@ -55,7 +59,7 @@ end
       params = {}
       params[:project_id] = p.id
       # Populate sample drawings
-      (1..1).each do |i|
+      (1..10).each do |i|
 
         drawing_name = "#{p.name}_DRW_#{i.to_s.rjust(3,"0")}"
         attachment = File.open("/Users/Thang/Dropbox/GA_BEWD/armaSearch/db/sample_database/TEMPLATE/drawings/SAMPLE_DRAWING.pdf")
@@ -71,7 +75,7 @@ end
       end
 
       # Populate sample parts
-      (1..1).each do |i|
+      (1..10).each do |i|
 
         drawing_name = "#{p.name}_PRT_#{i.to_s.rjust(3,"0")}"
         attachment = File.open("/Users/Thang/Dropbox/GA_BEWD/armaSearch/db/sample_database/TEMPLATE/parts/SAMPLE_PART.pdf")

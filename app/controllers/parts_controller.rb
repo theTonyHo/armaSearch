@@ -50,7 +50,7 @@ before_action :get_project
 
   def get_project
     # @project = Project.find(params[:project_id])
-    @project = current_user.all_projects.find(params[:project_id])
+    @project = current_user.projects.find(params[:project_id])
   end
 
   protected
